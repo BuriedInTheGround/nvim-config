@@ -34,7 +34,13 @@ return {
   },
 
   -- Edit the file system like a normal buffer (replaces netrw)
-  { 'stevearc/oil.nvim', opts = {} },
+  {
+    'stevearc/oil.nvim',
+    config = function()
+      require('oil').setup()
+      vim.keymap.set('n', '-', ':Oil<CR>', { desc = 'Open working directory' })
+    end,
+  },
 
   -- Highlighting of all uses of the word under the cursor
   {
