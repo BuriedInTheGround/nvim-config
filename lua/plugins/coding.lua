@@ -31,11 +31,11 @@ return {
         lua = { 'stylua' },
       },
       format_on_save = function(bufnr)
-        local disable_filetypes = { c = true, cpp = true }
-        return {
-          timeout_ms = 500,
-          lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
-        }
+        local ignore_filetypes = { 'c', 'cpp', 'css', 'html', 'sql' }
+        if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
+          return
+        end
+        return { timeout_ms = 500, lsp_format = 'fallback' }
       end,
     },
     event = { 'BufWritePre' },
@@ -44,7 +44,7 @@ return {
       {
         '<Leader>n',
         function()
-          require('conform').format({ async = true, lsp_fallback = true })
+          require('conform').format({ async = true, lsp_format = 'fallback' })
         end,
         mode = '',
         desc = '[N]eatly format current buffer',

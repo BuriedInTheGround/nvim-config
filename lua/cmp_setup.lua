@@ -3,6 +3,8 @@ local cmp = require('cmp')
 local luasnip = require('luasnip')
 luasnip.config.setup()
 
+luasnip.filetype_extend('html', { 'loremipsum' })
+
 cmp.setup({
   snippet = {
     expand = function(args)
