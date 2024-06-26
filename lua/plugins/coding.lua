@@ -44,12 +44,12 @@ return {
     cmd = { 'ConformInfo' },
     keys = {
       {
-        '<Leader>n',
+        '<Leader>nf',
         function()
           require('conform').format({ async = true, lsp_format = 'fallback' })
         end,
         mode = '',
-        desc = '[N]eatly format current buffer',
+        desc = '[N]eatly [F]ormat current buffer',
       },
     },
   },
