@@ -64,6 +64,38 @@ return {
     opts = { highlight_on_key = true, dim = true },
     event = { 'BufReadPre', 'BufNewFile' },
   },
+
+  -- Left-pad the buffer to the middle of the screen
+  {
+    'shortcuts/no-neck-pain.nvim',
+    lazy = false,
+    opts = {
+      width = 80,
+      autocmds = {
+        enableOnVimEnter = true,
+        enableOnTabEnter = true,
+        reloadOnColorSchemeChange = true,
+        skipEnteringNoNeckPainBuffer = true,
+      },
+      mappings = {
+        enabled = true,
+        scratchPad = '<Leader>sp',
+      },
+      buffers = {
+        scratchPad = {
+          enabled = true,
+          pathToFile = '~/notes.md',
+        },
+        right = {
+          enabled = false,
+        },
+      },
+    },
+    version = '*',
+    keys = {
+      { '<Leader>sp', desc = 'Toggle [S]cratch [P]ad' },
+    },
+  },
 }
 
 -- vim: ts=2 sts=2 sw=2 et
