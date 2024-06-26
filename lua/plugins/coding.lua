@@ -29,6 +29,8 @@ return {
       formatters_by_ft = {
         go = { 'goimports', 'gofmt' },
         lua = { 'stylua' },
+        nix = { 'nixfmt' },
+        typst = { 'typstyle' },
       },
       format_on_save = function(bufnr)
         local ignore_filetypes = { 'c', 'cpp', 'css', 'html', 'sql' }
