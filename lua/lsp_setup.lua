@@ -105,8 +105,8 @@ local servers = {
       'quarto',
       'rmd',
       'context',
-      'html',
-      'xhtml',
+      -- 'html', -- TODO: enable when support is less basic
+      -- 'xhtml', -- TODO: enable when support is less basic
     }, spell_check_filetypes),
     settings = {
       ltex = {
@@ -122,8 +122,8 @@ local servers = {
           'quarto',
           'rmd',
           'context',
-          'html',
-          'xhtml',
+          -- 'html', -- TODO: enable when support is less basic
+          -- 'xhtml', -- TODO: enable when support is less basic
         }, spell_check_filetypes),
         dictionary = {
           -- stylua: ignore
