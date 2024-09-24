@@ -141,6 +141,12 @@ local servers = {
             'NOTE', 'XXX', 'INFO', 'DOCS', 'PERF', 'TEST', -- note-type comments
             'HACK', 'WARNING', 'WARN', 'FIX', -- warning-type comments
             'FIXME', 'BUG', 'ERROR', 'DEPRECATED', -- error-type comments
+
+            -- Proper names
+            'NixOS', 'Perpetua', 'Ragusa', 'Simone', 'Typst',
+
+            -- Other words
+            'Distinguishability', 'distinguishability',
           },
         },
       },
