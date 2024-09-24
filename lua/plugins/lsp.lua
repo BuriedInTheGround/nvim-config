@@ -9,7 +9,12 @@ return {
       'williamboman/mason-lspconfig.nvim',
 
       -- Useful status updates for LSP
-      { 'j-hui/fidget.nvim', opts = {} },
+      {
+        'j-hui/fidget.nvim',
+        opts = {
+          notification = { window = { winblend = 0 } },
+        },
+      },
 
       -- Show function signature as you type
       { 'ray-x/lsp_signature.nvim', opts = { hint_enable = false } },
