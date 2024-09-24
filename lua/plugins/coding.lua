@@ -33,7 +33,7 @@ return {
         typst = { 'typstyle' },
       },
       format_on_save = function(bufnr)
-        local ignore_filetypes = { 'c', 'cpp', 'css', 'html', 'sql' }
+        local ignore_filetypes = { 'c', 'cpp', 'css', 'html', 'nix', 'sql' }
         if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
           return
         end
