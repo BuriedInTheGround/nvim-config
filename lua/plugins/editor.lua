@@ -38,7 +38,7 @@ return {
     'stevearc/oil.nvim',
     config = function()
       require('oil').setup()
-      vim.keymap.set('n', '-', ':Oil<CR>', { desc = 'Open working directory' })
+      vim.keymap.set('n', '-', ':Oil<CR>', { desc = 'Open parent directory' })
     end,
   },
 
@@ -71,28 +71,22 @@ return {
     lazy = false,
     opts = {
       width = 80,
-      autocmds = {
-        enableOnVimEnter = true,
-        enableOnTabEnter = true,
-        reloadOnColorSchemeChange = true,
-        skipEnteringNoNeckPainBuffer = true,
-      },
+      autocmds = { enableOnVimEnter = true },
       mappings = {
         enabled = true,
+        toggle = '<Leader>np',
         scratchPad = '<Leader>sp',
       },
       buffers = {
-        scratchPad = {
-          enabled = true,
-          pathToFile = '~/notes.md',
-        },
-        right = {
-          enabled = false,
-        },
+        wo = { fillchars = 'eob: ' },
+        left = { scratchPad = { pathToFile = '~/notes.md' } },
+        right = { enabled = false },
       },
     },
     version = '*',
+    cmd = { 'NoNeckPain', 'NoNeckPainScratchPad' },
     keys = {
+      { '<Leader>np', desc = 'Toggle [N]oNeck[P]ain' },
       { '<Leader>sp', desc = 'Toggle [S]cratch [P]ad' },
     },
   },
