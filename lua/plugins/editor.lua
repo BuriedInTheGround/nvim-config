@@ -27,7 +27,7 @@ return {
       { '<Leader>fh', desc = '[F]ind [H]elp' },
       { '<Leader>fk', desc = '[F]ind [K]eymaps' },
       { '<Leader>fg', desc = '[F]ind by [G]rep' },
-      { '<Leader>fo', desc = '[F]ind [R]ecent files' },
+      { '<Leader>fr', desc = '[F]ind [R]ecent files' },
       { '<Leader>f.', desc = 'Resume previous [F]ind' },
       { '<Leader>fn', desc = '[F]ind [N]eovim files' },
     },

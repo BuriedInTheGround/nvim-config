@@ -21,7 +21,7 @@ vim.keymap.set('n', '<Leader>fw', builtin.grep_string, { desc = '[F]ind current 
 vim.keymap.set('n', '<Leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp' })
 vim.keymap.set('n', '<Leader>fk', builtin.keymaps, { desc = '[F]ind [K]eymaps' })
 vim.keymap.set('n', '<Leader>fg', builtin.live_grep, { desc = '[F]ind by [G]rep' })
-vim.keymap.set('n', '<Leader>fo', builtin.oldfiles, { desc = '[F]ind [R]ecent files' })
+vim.keymap.set('n', '<Leader>fr', builtin.oldfiles, { desc = '[F]ind [R]ecent files' })
 vim.keymap.set('n', '<Leader>f.', builtin.resume, { desc = 'Resume previous [F]ind' })
 
 -- Search Neovim configuration files
