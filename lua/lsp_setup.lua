@@ -79,14 +79,23 @@ local servers = {
   ['eslint'] = {},
   ['gopls'] = {
     settings = {
-      gofumpt = true,
-      analyses = {
-        unusedparams = true,
-        unusedwrite = true,
-        useany = true,
-        unusedvariable = true,
+      gopls = {
+        gofumpt = true,
+        hints = {
+          compositeLiteralFields = true,
+          constantValues = true,
+          functionTypeParameters = true,
+          parameterNames = true,
+          rangeVariableTypes = true,
+        },
+        analyses = {
+          unusedparams = true,
+          unusedwrite = true,
+          useany = true,
+          unusedvariable = true,
+        },
+        staticcheck = true,
       },
-      staticcheck = true,
     },
   },
   ['html'] = {},
