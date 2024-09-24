@@ -32,6 +32,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, '[W]orkspace [L]ist Folders')
 
+    -- Toggle inlay hints
+    local client = vim.lsp.get_client_by_id(event.data.client_id)
+    if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+      vim.lsp.inlay_hint.enable(true) -- Turn on by default
+      map('<leader>th', function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
+      end, '[T]oggle Inlay [H]ints')
+    end
+
     -- Command `:Format` local to the LSP buffer
     vim.api.nvim_buf_create_user_command(event.buf, 'Format', function(_)
       vim.lsp.buf.format()
