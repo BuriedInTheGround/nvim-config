@@ -2,9 +2,16 @@ return {
   -- Perpetua
   {
     'perpetuatheme/nvim',
+    name = 'perpetua',
     lazy = false, -- load main colorscheme during startup
     config = function()
-      vim.cmd.colorscheme('perpetua')
+      if os.getenv('NIXOS_THEME') == 'light' then
+        vim.cmd.colorscheme('perpetua-light')
+      elseif os.getenv('NIXOS_THEME') == 'dark' then
+        vim.cmd.colorscheme('perpetua-dark')
+      else
+        vim.cmd.colorscheme('perpetua')
+      end
     end,
     priority = 1000, -- load before all the other start plugins
   },
