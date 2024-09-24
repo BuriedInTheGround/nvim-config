@@ -8,7 +8,9 @@ vim.o.mouse = 'nv'
 vim.o.showmode = false
 
 -- Sync clipboard between OS and Neovim
-vim.o.clipboard = 'unnamedplus'
+vim.schedule(function()
+  vim.o.clipboard = 'unnamedplus'
+end)
 
 -- Use for 4 spaces for indentation
 vim.o.tabstop = 4
