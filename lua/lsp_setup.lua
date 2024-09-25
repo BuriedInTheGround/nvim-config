@@ -170,6 +170,7 @@ local servers = {
     },
   },
   ['pylsp'] = {},
+  ['rust_analyzer'] = {},
   ['tailwindcss'] = {},
   ['typst_lsp'] = {},
   ['yamlls'] = {},
