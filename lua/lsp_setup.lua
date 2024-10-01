@@ -169,7 +169,7 @@ local servers = {
       },
     },
   },
-  ['pylsp'] = {},
+  ['pyright'] = {},
   ['rust_analyzer'] = {},
   ['tailwindcss'] = {},
   ['typst_lsp'] = {},
