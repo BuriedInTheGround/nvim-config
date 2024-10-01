@@ -27,13 +27,14 @@ return {
     end,
     opts = {
       formatters_by_ft = {
-        go = { 'goimports', 'gofmt' },
         lua = { 'stylua' },
         nix = { 'nixfmt' },
+        python = { 'ruff_fix', 'ruff_organize_imports', 'ruff_format' },
+        rust = { 'rustfmt' },
         typst = { 'typstyle' },
       },
       format_on_save = function(bufnr)
-        local ignore_filetypes = { 'c', 'cpp', 'css', 'html', 'nix', 'sql' }
+        local ignore_filetypes = { 'css', 'html', 'nix' }
         if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
           return
         end
