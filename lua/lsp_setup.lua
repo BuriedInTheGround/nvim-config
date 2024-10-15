@@ -170,7 +170,14 @@ local servers = {
     },
   },
   ['pyright'] = {},
-  ['rust_analyzer'] = {},
+  ['rust_analyzer'] = {
+    settings = {
+      ['rust-analyzer'] = {
+        cargo = { features = 'all' },
+        check = { command = 'clippy' },
+      },
+    },
+  },
   ['tailwindcss'] = {},
   ['typst_lsp'] = {},
   ['yamlls'] = {},
