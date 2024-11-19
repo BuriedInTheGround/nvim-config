@@ -179,7 +179,15 @@ local servers = {
     },
   },
   ['tailwindcss'] = {},
-  ['typst_lsp'] = {},
+  ['tinymist'] = {
+    settings = {
+      tinymist = {
+        exportPdf = 'never',
+        semanticTokens = 'enable',
+        formatterMode = 'disable', -- Handled by conform.nvim
+      },
+    },
+  },
   ['yamlls'] = {},
 }
 
