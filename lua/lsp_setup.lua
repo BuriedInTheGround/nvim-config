@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     -- Toggle inlay hints
     local client = vim.lsp.get_client_by_id(event.data.client_id)
-    if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+    if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
       vim.lsp.inlay_hint.enable(true) -- Turn on by default
       map('<leader>th', function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
@@ -185,6 +185,7 @@ local servers = {
   ['yamlls'] = {},
 }
 
+---@diagnostic disable-next-line: missing-fields
 require('mason').setup({ PATH = 'append' })
 require('mason-lspconfig').setup()
 
