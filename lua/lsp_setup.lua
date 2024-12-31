@@ -52,18 +52,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
-local spell_check_filetypes = {
-  'c',
-  'cpp',
-  'go',
-  'javascript',
-  'lua',
-  'python',
-  'rust',
-  'typescript',
-  -- 'typst', -- TODO: enable when support is available, too many hits for now
-}
-
 -- Enable the following language servers
 local servers = {
   ['asm_lsp'] = {},
@@ -109,40 +97,40 @@ local servers = {
       },
     },
   },
-  ['ltex'] = {
-    filetypes = vim.list_extend({
-      'bib',
-      'gitcommit',
-      'markdown',
-      'org',
-      'plaintex',
-      'rst',
-      'rnoweb',
-      'tex',
-      'pandoc',
-      'quarto',
-      'rmd',
-      'context',
-      -- 'html', -- TODO: enable when support is less basic
-      -- 'xhtml', -- TODO: enable when support is less basic
-    }, spell_check_filetypes),
+  ['ltex_plus'] = {
     settings = {
       ltex = {
-        enabled = vim.list_extend({
+        enabled = {
+          -- Markup languages
           'bibtex',
-          'gitcommit',
+          'context',
+          'context.tex',
+          'html',
+          'latex',
           'markdown',
+          'mdx',
+          'typst',
           'org',
-          'tex',
+          'quarto',
           'restructuredtext',
           'rsweave',
-          'latex',
-          'quarto',
-          'rmd',
-          'context',
-          -- 'html', -- TODO: enable when support is less basic
-          -- 'xhtml', -- TODO: enable when support is less basic
-        }, spell_check_filetypes),
+          -- Programming languages
+          'c',
+          'cpp',
+          'css',
+          'go',
+          'java',
+          'javascript',
+          'lua',
+          'php',
+          'python',
+          'rust',
+          'shellscript', -- bash
+          'sql',
+          'svelte',
+          'typescript',
+          'xml',
+        },
         dictionary = {
           -- stylua: ignore
           ['en-US'] = {
@@ -157,6 +145,10 @@ local servers = {
             -- Other words
             'Distinguishability', 'distinguishability',
           },
+        },
+        additionalRules = {
+          enablePickyRules = true,
+          motherTongue = 'it',
         },
       },
     },
