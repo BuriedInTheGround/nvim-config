@@ -8,6 +8,16 @@ return {
     cmd = 'StartupTime',
   },
 
+  -- Hints for establishing a good command workflow
+  {
+    'm4xshen/hardtime.nvim',
+    dependencies = { 'MunifTanjim/nui.nvim' },
+    config = true,
+    event = { 'BufReadPre', 'BufNewFile' },
+    cmd = { 'Hardtime' },
+  },
+
+  -- TinyGo integration to properly set Go env vars and let gopls work
   {
     'pcolladosoto/tinygo.nvim',
     config = true,
