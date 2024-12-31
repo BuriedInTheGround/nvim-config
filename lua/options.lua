@@ -23,6 +23,9 @@ vim.o.smartindent = true
 vim.o.breakindent = true
 vim.o.wrap = true
 
+-- Allow virtual editing in Visual block mode
+vim.o.virtualedit = 'block'
+
 -- Enable undo history
 vim.o.undofile = true
 
