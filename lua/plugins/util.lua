@@ -8,6 +8,12 @@ return {
     cmd = 'StartupTime',
   },
 
+  {
+    'pcolladosoto/tinygo.nvim',
+    config = true,
+    cmd = { 'TinyGoEnv', 'TinyGoSetTarget', 'TinyGoTargets' },
+  },
+
   -- Generate an image of the current buffer contents using Charm Freeze
   {
     'charm-community/freeze.nvim',
