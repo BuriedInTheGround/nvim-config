@@ -47,6 +47,7 @@ require('nvim-treesitter.configs').setup({
     'rust',
     'sql',
     'sxhkdrc',
+    'templ',
     'toml',
     'tsx',
     'typescript',

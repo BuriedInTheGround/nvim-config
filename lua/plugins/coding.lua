@@ -31,6 +31,7 @@ return {
         nix = { 'nixfmt' },
         python = { 'ruff_fix', 'ruff_organize_imports', 'ruff_format' },
         rust = { 'rustfmt' },
+        templ = { 'templ' },
         typst = { 'typstyle' },
       },
       format_on_save = function(bufnr)
