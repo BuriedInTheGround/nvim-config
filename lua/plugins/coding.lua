@@ -36,13 +36,10 @@ return {
       },
       format_on_save = function(bufnr)
         local ignore_filetypes = { 'css', 'html', 'nix' }
-        local lsp_format_opt
-        if ignore_filetypes[vim.bo[bufnr].filetype] then
-          lsp_format_opt = 'never'
-        else
-          lsp_format_opt = 'fallback'
+        if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
+          return
         end
-        return { timeout_ms = 500, lsp_format = lsp_format_opt }
+        return { timeout_ms = 500, lsp_format = 'fallback' }
       end,
     },
     event = { 'BufWritePre' },
