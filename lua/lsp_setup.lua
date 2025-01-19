@@ -172,6 +172,7 @@ local servers = {
     },
   },
   ['tailwindcss'] = {},
+  ['ts_ls'] = {},
   ['templ'] = {},
   ['tinymist'] = {
     settings = {
