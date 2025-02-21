@@ -59,6 +59,16 @@ return {
     },
     opts = {
       backend = vim.fn.executable('delta') == 1 and 'delta' or 'vim',
+      backend_opts = {
+        delta = {
+          args = {
+            '--diff-highlight',
+            '--line-numbers',
+            '--line-numbers-minus-style=red',
+            '--line-numbers-plus-style=green',
+          },
+        },
+      },
       -- Disable icons
       signs = {
         quickfix = { '', { link = 'DiagnosticInfo' } },
