@@ -139,11 +139,47 @@ local servers = {
             'HACK', 'WARNING', 'WARN', 'FIX', -- warning-type comments
             'FIXME', 'BUG', 'ERROR', 'DEPRECATED', -- error-type comments
 
-            -- Proper names
-            'NixOS', 'Perpetua', 'Ragusa', 'Simone', 'Typst',
+            -- A
+            'AEAD',
+            'AFL', 'AFL++',
 
-            -- Other words
+            -- B
+            'BuriedInTheGround',
+
+            -- D
             'Distinguishability', 'distinguishability',
+
+            -- F
+            'Fuzzer', 'fuzzer',
+            'Fuzzers', 'fuzzers',
+            'Fuzzing', 'fuzzing',
+
+            -- H
+            'Hardcode', 'hardcode',
+            'Hardcoded', 'hardcoded',
+            'HMAC',
+
+            -- K
+            'KMAC',
+
+            -- L
+            'LibAFL',
+            'libFuzzer',
+
+            -- N
+            'NixOS',
+
+            -- P
+            'Perpetua',
+
+            -- R
+            'Ragusa',
+
+            -- S
+            'Simone',
+
+            -- T
+            'Typst',
           },
         },
         additionalRules = {
