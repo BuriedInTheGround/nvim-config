@@ -24,7 +24,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     -- Actions
     map('<Leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-    map('<Leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
+    if not pcall(require, 'tiny-code-action') then
+      map('<Leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
+    else
+      map('<Leader>ca', require('tiny-code-action').code_action, '[C]ode [A]ction', { 'n', 'x' })
+    end
 
     -- Workspace folders management
     map('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
@@ -214,7 +218,7 @@ local servers = {
       tinymist = {
         exportPdf = 'never',
         semanticTokens = 'enable',
-        formatterMode = 'disable', -- Handled by conform.nvim
+        formatterMode = 'disable', -- handled by conform.nvim
       },
     },
   },

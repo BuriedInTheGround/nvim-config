@@ -49,6 +49,32 @@ return {
 
   -- Typings for `vim.uv` used by lazydev
   { 'Bilal2453/luvit-meta', lazy = true },
+
+  -- Code actions with Telescope
+  {
+    'rachartier/tiny-code-action.nvim',
+    dependencies = {
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-telescope/telescope.nvim' },
+    },
+    opts = {
+      backend = vim.fn.executable('delta') == 1 and 'delta' or 'vim',
+      -- Disable icons
+      signs = {
+        quickfix = { '', { link = 'DiagnosticInfo' } },
+        others = { '', { link = 'DiagnosticWarning' } },
+        refactor = { '', { link = 'DiagnosticWarning' } },
+        ['refactor.move'] = { '', { link = 'DiagnosticInfo' } },
+        ['refactor.extract'] = { '', { link = 'DiagnosticError' } },
+        ['source.organizeImports'] = { '', { link = 'TelescopeResultVariable' } },
+        ['source.fixAll'] = { '', { link = 'TelescopeResultVariable' } },
+        ['source'] = { '', { link = 'DiagnosticError' } },
+        ['rename'] = { '', { link = 'DiagnosticWarning' } },
+        ['codeAction'] = { '', { link = 'DiagnosticError' } },
+      },
+    },
+    event = 'LspAttach',
+  },
 }
 
 -- vim: ts=2 sts=2 sw=2 et
