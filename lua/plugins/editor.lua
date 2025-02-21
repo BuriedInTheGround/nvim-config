@@ -70,24 +70,28 @@ return {
     'shortcuts/no-neck-pain.nvim',
     lazy = false,
     opts = {
-      width = 80,
-      autocmds = { enableOnVimEnter = true },
+      width = 112,
+      fallbackOnBufferDelete = true,
+      autocmds = {
+        enableOnVimEnter = false,
+        reloadOnColorSchemeChange = true,
+      },
       mappings = {
         enabled = true,
-        toggle = '<Leader>np',
-        scratchPad = '<Leader>sp',
+        toggle = '<Leader>z',
+        scratchPad = '<Leader>s',
       },
       buffers = {
+        setNames = true,
         wo = { fillchars = 'eob: ' },
         left = { scratchPad = { pathToFile = '~/notes.md' } },
-        right = { enabled = false },
       },
     },
     version = '*',
     cmd = { 'NoNeckPain', 'NoNeckPainScratchPad' },
     keys = {
-      { '<Leader>np', desc = 'Toggle [N]oNeck[P]ain' },
-      { '<Leader>sp', desc = 'Toggle [S]cratch [P]ad' },
+      { '<Leader>z', desc = 'Toggle NoNeckPain' },
+      { '<Leader>s', desc = 'Toggle [S]cratch pad' },
     },
   },
 }
